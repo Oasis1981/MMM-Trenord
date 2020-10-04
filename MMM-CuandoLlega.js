@@ -7,10 +7,10 @@
  * MIT Licensed.
  */
 
-Module.register("MMM-CuandoLlega", {
+Module.register("MMM-Trenord", {
   busesInfo: [],
   defaults: {
-    header: 'Cuando Llega',
+    header: 'Rho',
     buses: [
       {
         line: '120', // 120 Único
@@ -96,7 +96,7 @@ Module.register("MMM-CuandoLlega", {
     wrapper.className = 'cuandollega ' + this.config.infoClass
 
     var self = this
-    this.busesInfo.forEach(bus => {
+    this.busesInfo.forEach(treno => {
       let nearBuses = bus[0].arribos
       let lineInfo = bus[0].linea
       

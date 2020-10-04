@@ -10,21 +10,22 @@
 var NodeHelper = require('node_helper')
 var request = require('request')
 
-var cuandoLlegaAPI = 'https://ws.rosario.gob.ar/ubicaciones/public/cuandollega'
+var cuandoLlegaAPI = 'view-source:http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/partenze/S01037/';
 
 module.exports = NodeHelper.create({
   start: function () {
     console.log('Starting node helper for: ' + this.name)
   },
   getBusInfo: function(info) {
-    var self = this
+      var self = this
+      var d = new Date()
     var options = {
       method: 'GET',
       qs: {
         linea: info.line,
         parada: info.stop
       },
-      url: cuandoLlegaAPI
+      url: cuandoLlegaAPI + d
     }
     request(options, function (error, response, body) {
       if (!error && response.statusCode == 200) {
